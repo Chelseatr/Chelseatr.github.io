@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/7 | Hexo</title>
+  <title>配置docker + hexo-blog复用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/07/index.html">
+  <meta name="description" content="配置docker + hexo-blog复用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置docker + hexo-blog复用">
+<meta property="og:url" content="http://example.com/2021/08/23/%E9%85%8D%E7%BD%AEdocker%20+%20hexo-blog%E5%A4%8D%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="配置docker + hexo-blog复用">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/chelsea/Library/Application%20Support/typora-user-images/image-20210718084304076.png">
+<meta property="og:image" content="http://example.com/Users/chelsea/Library/Application%20Support/typora-user-images/image-20210718084333521.png">
+<meta property="article:published_time" content="2021-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-06T08:46:54.776Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="Parallels Desktop">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="ssh">
+<meta property="article:tag" content="cnetos">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Users/chelsea/Library/Application%20Support/typora-user-images/image-20210718084304076.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -187,49 +202,321 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-配置docker + hexo-blog复用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/14/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-14T13:39:02.860Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/14/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      配置docker + hexo-blog复用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/08/23/%E9%85%8D%E7%BD%AEdocker%20+%20hexo-blog%E5%A4%8D%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-08-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-23</time>
+</a>
+        
+        
+            <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.9k字</span>
+      </span>
+    </span>
 
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">7分</span>
+      </span>
+    </span>
+</div>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>配置docker + hexo-blog复用</p>
+<span id="more"></span>
+
+<h2 id="0x00-docker基础知识"><a href="#0x00-docker基础知识" class="headerlink" title="0x00 docker基础知识"></a>0x00 docker基础知识</h2><h3 id="为什么会出现？"><a href="#为什么会出现？" class="headerlink" title="为什么会出现？"></a>为什么会出现？</h3><blockquote>
+<p>用于解决“在我的电脑可以运行，怎么在你电脑运行不了？”</p>
+</blockquote>
+<h3 id="与虚拟机的差异"><a href="#与虚拟机的差异" class="headerlink" title="与虚拟机的差异"></a>与虚拟机的差异</h3><blockquote>
+<p>虚拟机：虚拟出一条硬件，运行一个完整的操作系统，在此系统上安装运行app</p>
+<p>docker：容器化，容器内的app直接运行在宿主机的内容，不需要再搞内核与操作系统，每个容器间都是相互隔离的，互不影响</p>
+</blockquote>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
+<p>镜像：类似于虚拟机的快照，里面包含了你要部署的应用程序以及他相关联的库，类似于一种环境</p>
+<p>容器：类似于运行起来的虚拟机，里面运行了你的应用程序，每一个容器都是独立的，互不影响</p>
+</blockquote>
+<h3 id="部署hexo的操作总览"><a href="#部署hexo的操作总览" class="headerlink" title="部署hexo的操作总览"></a>部署hexo的操作总览</h3><blockquote>
+<p>“俄罗斯套娃”</p>
+<p>本博文是：在苹果m1芯片下使用macOS系统，通过Parallels Desktop虚拟机安装ubuntu系统，通过ssh远程连接虚拟机，使用docker软件安装centos镜像，最终容器中部署hexo</p>
+</blockquote>
+<h3 id="本次使用Docker-可以会用到的常用命令"><a href="#本次使用Docker-可以会用到的常用命令" class="headerlink" title="本次使用Docker 可以会用到的常用命令"></a>本次使用Docker 可以会用到的常用命令</h3><blockquote>
+<h4 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 版本信息</span></span><br><span class="line">docker version</span><br><span class="line"><span class="comment"># docker系统信息，包括镜像和容器的数量</span></span><br><span class="line">docker info</span><br><span class="line"><span class="comment"># 帮助命令</span></span><br><span class="line">docker --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询所有的镜像的仓库源、版本标签、镜像ID、镜像大小等</span></span><br><span class="line">docker images -a</span><br><span class="line"><span class="comment"># 只显示ID</span></span><br><span class="line">docker images -q</span><br><span class="line"><span class="comment"># 拉取镜像，默认是拉取最新版</span></span><br><span class="line">docker pull x</span><br><span class="line"><span class="comment"># 拉取指定版本镜像，注：版本必须在官方存在</span></span><br><span class="line">docker pull x:y <span class="comment"># x是镜像，y是版本，如mysql:5.7</span></span><br><span class="line"><span class="comment"># 删除镜像</span></span><br><span class="line">docker rmi -f ID   <span class="comment">#删除单个镜像</span></span><br><span class="line">docker rmi -f ID1 ID2 ID3 ...<span class="comment">#删除多个镜像</span></span><br><span class="line"><span class="comment"># 删除所有镜像</span></span><br><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h4><p>有镜像才能创容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">docker pull centos</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动并进入容器</span></span><br><span class="line">docker run -it centos /bin/bash <span class="comment">#centos可以换成别的，其他不动</span></span><br><span class="line"><span class="comment"># 容器停止+退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查询当前在运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment">#查询之前运行过的容器 + 现在运行过的容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 容器不停止+退出</span></span><br><span class="line">Ctrl + p + q</span><br><span class="line"><span class="comment"># 删除指定容器，不能删除正在运行的容器，加上-f则可以</span></span><br><span class="line">docker rm id</span><br><span class="line"><span class="comment">#删除所有容器</span></span><br><span class="line">docker rm -f $(docker ps -aq)</span><br><span class="line"></span><br><span class="line">docker star id <span class="comment">#启动容器</span></span><br><span class="line">docker restar id <span class="comment">#重启容器</span></span><br><span class="line">docker stop id <span class="comment">#停止容器</span></span><br><span class="line">docker <span class="built_in">kill</span> id <span class="comment">#杀掉容器</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2 id="0x01准备实践环境"><a href="#0x01准备实践环境" class="headerlink" title="0x01准备实践环境"></a>0x01准备实践环境</h2><blockquote>
+<p>工作：</p>
+<p>1.准备虚拟机ubuntu</p>
+<p>2.在本地通过ssh远程连接ubuntu虚拟机</p>
+<p>3.安装docker</p>
+<p>4.拉取centos的镜像</p>
+</blockquote>
+<blockquote>
+<p>环境：</p>
+<p>m1-macOS BigSur 11.3.1</p>
+<p>Parallels Desktop</p>
+<p>Ubuntu 20.04 ARM64</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.准备虚拟机ubuntu</span></span><br><span class="line"><span class="comment"># 本次版本：Ubuntu 20.04 ARM64</span></span><br><span class="line"><span class="comment"># 先下载PD，然后直接就可以在PD上下载ubuntu</span></span><br><span class="line"><span class="comment"># 直接用就可以，软件自动给你配好了</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用ssh远程连接ubuntu虚拟机"><a href="#使用ssh远程连接ubuntu虚拟机" class="headerlink" title="使用ssh远程连接ubuntu虚拟机"></a>使用ssh远程连接ubuntu虚拟机</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用ssh远程连接ubuntu虚拟机</span></span><br><span class="line"><span class="comment"># 1.安装openssh-server</span></span><br><span class="line">sudo apt install openssh-server</span><br><span class="line"><span class="comment"># 2.设置root密码</span></span><br><span class="line">sudo passwd rooot</span><br><span class="line"><span class="comment"># 3.修改配置文件</span></span><br><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"><span class="comment"># 将PermitRootLogin后面的值修改成yes即可，参考图一</span></span><br><span class="line"><span class="comment"># 4.重启ssh服务</span></span><br><span class="line">sudo systemctl restart ssh</span><br><span class="line"><span class="comment"># 5.获取虚拟机ubuntu的ip地址，用于ssh连接，在ubuntu的终端输入：</span></span><br><span class="line">ip a</span><br><span class="line"><span class="comment"># 找到ip，参考图二</span></span><br><span class="line"><span class="comment"># 6.在本地终端输入</span></span><br><span class="line">ssh root @ip</span><br><span class="line"><span class="comment">#回车后输入密码即可连接到ubuntu，这个ip就填虚拟机的ip</span></span><br><span class="line"><span class="comment"># 如果提示无法使用root用户进行远程登录，则见问题汇总</span></span><br></pre></td></tr></table></figure>
+
+<p>图一：</p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210718084304076.png" alt="image-20210718084304076" style="zoom:40%;" />
+
+<p>图二：</p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210718084333521.png" alt="image-20210718084333521" style="zoom:40%;" />
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装Docker</span></span><br><span class="line"><span class="comment"># 注意是本地通过ssh远程给虚拟机安装docker，注意，不要偷懒直接去虚拟机中下载，这样就无法复用！</span></span><br><span class="line"><span class="comment"># 注意，以下操作均在本地连接好虚拟机的终端中输入！</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新ubuntu的apt源索引</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装包允许apt通过HTTPS使用仓库</span></span><br><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 添加Docker官方GPG key</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置Docker稳定版仓库</span></span><br><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="subst">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable&quot;</span></span><br><span class="line">   </span><br><span class="line"><span class="comment"># 添加仓库后，更新apt源索引</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装最新版Docker CE（社区版）</span></span><br><span class="line">sudo apt-get install docker-ce</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前运行容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前运行容器以及失效容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查Docker CE是否安装正确</span></span><br><span class="line">sudo docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置daemon.json 加快docker pull 速度</span></span><br><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"><span class="comment"># 复制粘贴一下内容</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://9cpn8tt6.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 再esc :wq退出编辑，再输</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试运行 hello-world</span></span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取centos镜像</span></span><br><span class="line">docker pull centos:7</span><br></pre></td></tr></table></figure>
+
+<p>做完以上步骤，记得快照一下！！</p>
+<h2 id="0x02-制作Centos-gt-hexo容器"><a href="#0x02-制作Centos-gt-hexo容器" class="headerlink" title="0x02 制作Centos -&gt; hexo容器"></a>0x02 制作Centos -&gt; hexo容器</h2><blockquote>
+<p>运行并进入容器</p>
+<p>配置容器</p>
+<p>安装hexo</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.运行并进入容器</span></span><br><span class="line"><span class="comment"># 1.1运行容器</span></span><br><span class="line">docker run -tdi --name hexo-blog -p 80:4000 -v /home/blog/:/home/blog centos:7 /bin/bash</span><br><span class="line"><span class="comment"># 1.2进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it hexo-blog /bin/bash</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.配置centos环境</span></span><br><span class="line"><span class="comment"># 2.1 安装hexo需要的依赖：git node</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line">yum -y install git-core</span><br><span class="line">yum -y install wget</span><br><span class="line"><span class="comment">## 安装node，详情见问题汇总</span></span><br><span class="line">wget https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-arm64.tar.xz </span><br><span class="line"><span class="comment">## 将 tar.xz 压缩文件转成 node-v14.17.3-linux-arm64.tar</span></span><br><span class="line">xz -d node-v14.17.3-linux-arm64.tar.xz</span><br><span class="line"><span class="comment">## 再用 tar xvf node-v14.17.3-linux-arm64.tar  解压缩文件</span></span><br><span class="line">tar -xvf node-v14.17.3-linux-arm64.tar</span><br><span class="line"><span class="comment">## 可修改名字（也可以不改名字的），这里我将名字修改成nodejs</span></span><br><span class="line">mv node-v14.17.3-linux-arm64 nodejs</span><br><span class="line"><span class="comment">## 查看版本</span></span><br><span class="line"><span class="built_in">cd</span> /nodejs/bin/</span><br><span class="line">node -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 解决容器内中文乱码问题</span></span><br><span class="line">yum install kde-l10n-Chinese -y</span><br><span class="line">yum install glibc-common -y</span><br><span class="line">localedef -c -f UTF-8 -i zh_CN zh_CN.utf8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.3. 设置 nodejs 环境变量和语言变量，在 export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL 一行的上面添加如下3个export内容</span></span><br><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> NODE_HOME=/opt/node-v12.16.0-linux-x64</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$NODE_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> LC_ALL=zh_CN.utf8</span><br><span class="line"></span><br><span class="line">:wq</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 安装hexo</span></span><br><span class="line"><span class="comment">## 3.1 下载hexo</span></span><br><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3.2 使用脚本一键安装hexo</span></span><br><span class="line"><span class="built_in">cd</span> /home/</span><br><span class="line">git <span class="built_in">clone</span> https://git.oschina.net/neoFelhz/hexokit.git</span><br><span class="line"><span class="built_in">cd</span> hexokit</span><br><span class="line"><span class="comment">### cat install.sh</span></span><br><span class="line">cp -r * /home/blog </span><br><span class="line"><span class="built_in">cd</span> /home/blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment">## 3.3 启动hexo</span></span><br><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br><span class="line"><span class="comment">### 去访问虚拟机ip即可</span></span><br></pre></td></tr></table></figure>
+
+<p>此时再快照一下</p>
+<p>此后进容器后要运行hexo就</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>如果出现hexo command not found问题，please见问题汇总</p>
+<h2 id="0x03-复用Hexo容器"><a href="#0x03-复用Hexo容器" class="headerlink" title="0x03 复用Hexo容器"></a>0x03 复用Hexo容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 将制作好的 Hexo 镜像 导出</span></span><br><span class="line">docker ps -a <span class="comment">## 查看容器ID，并记录下来</span></span><br><span class="line">docker <span class="built_in">export</span> ID  &gt;  chelsea_hexo.tar<span class="comment">##ID就写容器的ID，后面那个.tar是固定格式，前面的chelsea_hexo是随便取的名字</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 容器保存 导入 复用</span></span><br><span class="line"><span class="comment">## 将chelsea_hexo.tar 保存下来，</span></span><br><span class="line"><span class="comment">## 当有需要的时候导入到新的服务器进行复用</span></span><br><span class="line">docker import chelsea_hexo.tar  chelsea/hexo:v1</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># ======================================</span></span><br><span class="line"><span class="comment"># 有了chelsea_hexo.tar  上面的步骤就不用重新走了</span></span><br><span class="line"><span class="comment"># ======================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 启动hexo容器</span></span><br><span class="line"><span class="comment">#  挂载两个目录：/home/blog 放 hexo 博客，/home/tmp 放要转移的博客文档</span></span><br><span class="line"><span class="comment">## 以后要是迁移 Hexo博客 需要将原先的博客资料放到虚拟机 ubuntu 中的 tmp 文件，然后再进容器进行相关转移</span></span><br><span class="line">docker run -itd --name blog -p 80:4000 -v /home/blog:/home/blog -v /home/tmp:/home/tmp chelsea/hexo:v1 /bin/bash</span><br><span class="line">docker <span class="built_in">exec</span> -it blog /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. Hexo init</span></span><br><span class="line"><span class="comment">## 参考0x02_3.2. 使用网上脚本init</span></span><br><span class="line"><span class="built_in">cd</span> hexokit</span><br><span class="line"><span class="comment">## cat install.sh</span></span><br><span class="line">cp -r * /home/blog </span><br><span class="line"><span class="built_in">cd</span> /home/blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 启动 Hexo</span></span><br><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br><span class="line"><span class="comment">## 访问 localhost:4000</span></span><br><span class="line"><span class="comment">## 访问 ip：80</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完成上述过程之后，就可以在任何一台装有 docker 的服务器，快速部署好 Hexo。</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mac</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Parallels Desktop</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssh</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cnetos</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/23/%E9%85%8D%E7%BD%AEdocker%20+%20hexo-blog%E5%A4%8D%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/08/24/%E9%85%8D%E7%BD%AEdocker%20+%20hexo-blog%E5%A4%8D%E7%94%A8%20%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          配置docker + hexo-blog复用的问题汇总
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/08/22/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo%E7%9A%84yilia%E4%B8%BB%E9%A2%98%E4%BA%8B%E9%81%87%E5%88%B0%E6%97%A0%E6%95%B0%E6%81%B6%E5%BF%83%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%99%E4%BB%B6%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">配置hexo的yilia主题时遇到的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">0x00 docker基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%87%BA%E7%8E%B0%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">为什么会出现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-number">1.2.</span> <span class="toc-text">与虚拟机的差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2hexo%E7%9A%84%E6%93%8D%E4%BD%9C%E6%80%BB%E8%A7%88"><span class="toc-number">1.4.</span> <span class="toc-text">部署hexo的操作总览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E6%AC%A1%E4%BD%BF%E7%94%A8Docker-%E5%8F%AF%E4%BB%A5%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text">本次使用Docker 可以会用到的常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.1.</span> <span class="toc-text">帮助命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.2.</span> <span class="toc-text">镜像命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.3.</span> <span class="toc-text">容器命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01%E5%87%86%E5%A4%87%E5%AE%9E%E8%B7%B5%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">0x01准备实践环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5ubuntu%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">使用ssh远程连接ubuntu虚拟机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-%E5%88%B6%E4%BD%9CCentos-gt-hexo%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">0x02 制作Centos -&gt; hexo容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-%E5%A4%8D%E7%94%A8Hexo%E5%AE%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">0x03 复用Hexo容器</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -273,8 +560,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

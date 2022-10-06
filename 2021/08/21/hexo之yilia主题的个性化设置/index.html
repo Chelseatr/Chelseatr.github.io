@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/7 | Hexo</title>
+  <title>hexo之yilia主题的个性化设置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/07/index.html">
+  <meta name="description" content="hexo之yilia主题的个性化设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo之yilia主题的个性化设置">
+<meta property="og:url" content="http://example.com/2021/08/21/hexo%E4%B9%8Byilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="hexo之yilia主题的个性化设置">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-06T08:47:06.305Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="yilia">
+<meta property="article:tag" content="个性化">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -187,49 +194,263 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo之yilia主题的个性化设置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/14/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-14T13:39:02.860Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/14/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      hexo之yilia主题的个性化设置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/08/21/hexo%E4%B9%8Byilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2021-08-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-21</time>
+</a>
+        
+        
+            <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.2k字</span>
+      </span>
+    </span>
 
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hexo之yilia主题的个性化设置</p>
+<span id="more"></span>
+
+<h2 id="设置头像"><a href="#设置头像" class="headerlink" title="设置头像"></a>设置头像</h2><p>首先，将头像照片放进yilia/source/img目录下，改一个自己喜欢的名字，然后去yilia目录下的_config.yml文件中对应处设置如下:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line">avatar: /img/头像.png</span><br></pre></td></tr></table></figure>
+
+<p>这个头像.png就是你照片的名字</p>
+<h2 id="所有文章"><a href="#所有文章" class="headerlink" title="所有文章"></a>所有文章</h2><p>初次点击所有文章时会出现模块缺失，在博客根目录下执行命令：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
+
+<p><strong>在根目录下的_config.yml文件中添加代码</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">  meta: <span class="literal">false</span></span><br><span class="line">  pages: <span class="literal">false</span></span><br><span class="line">  posts:</span><br><span class="line">    title: <span class="literal">true</span></span><br><span class="line">    date: <span class="literal">true</span></span><br><span class="line">    path: <span class="literal">true</span></span><br><span class="line">    text: <span class="literal">false</span></span><br><span class="line">    raw: <span class="literal">false</span></span><br><span class="line">    content: <span class="literal">false</span></span><br><span class="line">    slug: <span class="literal">false</span></span><br><span class="line">    updated: <span class="literal">false</span></span><br><span class="line">    comments: <span class="literal">false</span></span><br><span class="line">    link: <span class="literal">false</span></span><br><span class="line">    permalink: <span class="literal">false</span></span><br><span class="line">    excerpt: <span class="literal">false</span></span><br><span class="line">    categories: <span class="literal">false</span></span><br><span class="line">    tags: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="在左侧栏添加时钟："><a href="#在左侧栏添加时钟：" class="headerlink" title="在左侧栏添加时钟："></a>在左侧栏添加时钟：</h2><p><strong>在yilia/layout/_partial目录下的left-col.ejs文件中添加代码</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--时钟--&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;div style=<span class="string">&quot;position:absolute; bottom:120px left:auto; width:100%;height:50%&quot;</span>&gt;</span><br><span class="line">	&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;https://cdn.staticfile.org/vue/2.4.2/vue.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">  	&lt;div id=<span class="string">&quot;clock&quot;</span> style=<span class="string">&quot;font-family: &#x27;Share Tech Mono&#x27;, monospace;color: #ffffff;text-align: center;position: absolute;left: 50%;top: 50%;-webkit-transform: translate(50%, 50%);transform: translate(-50%, -50%);color: #4B8CE1;text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);&quot;</span>&gt;</span><br><span class="line">      		&lt;p style=<span class="string">&quot;margin: 0;padding: 0;letter-spacing: 0.1em;font-size: 15px;&quot;</span>&gt;&#123;&#123; date &#125;&#125;&lt;/p&gt;</span><br><span class="line">      		&lt;p style=<span class="string">&quot;margin: 0;padding: 0;letter-spacing: 0.01em;font-size: 38px;&quot;</span>&gt;&#123;&#123; time &#125;&#125;&lt;/p&gt;</span><br><span class="line">  	&lt;/div&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		<span class="keyword">var</span> clock = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">			el: <span class="string">&#x27;#clock&#x27;</span>,</span><br><span class="line">			data: &#123;</span><br><span class="line">				time: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">				date: <span class="string">&#x27;&#x27;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> week = [<span class="string">&#x27;星期天&#x27;</span>, <span class="string">&#x27;星期一&#x27;</span>, <span class="string">&#x27;星期二&#x27;</span>, <span class="string">&#x27;星期三&#x27;</span>, <span class="string">&#x27;星期四&#x27;</span>, <span class="string">&#x27;星期五&#x27;</span>, <span class="string">&#x27;星期六&#x27;</span>];</span><br><span class="line">		<span class="keyword">var</span> timerID = setInterval(updateTime, <span class="number">1000</span>);</span><br><span class="line">		updateTime();</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">updateTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> cd = <span class="keyword">new</span> Date();</span><br><span class="line">			clock.time = zeroPadding(cd.getHours(), <span class="number">2</span>) + <span class="string">&#x27;:&#x27;</span> + zeroPadding(cd.getMinutes(), <span class="number">2</span>) + <span class="string">&#x27;:&#x27;</span> + zeroPadding(cd.getSeconds(), <span class="number">2</span>);</span><br><span class="line">			clock.date = zeroPadding(cd.getFullYear(), <span class="number">4</span>) + <span class="string">&#x27;-&#x27;</span> + zeroPadding(cd.getMonth() + <span class="number">1</span>, <span class="number">2</span>) + <span class="string">&#x27;-&#x27;</span> + zeroPadding(cd.getDate(), <span class="number">2</span>) + week[cd.getDay()];</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">zeroPadding</span>(<span class="params">num, digit</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> zero = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; digit; i++) &#123;</span><br><span class="line">				zero += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> (zero + num).slice(-digit);</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加不蒜子统计"><a href="#添加不蒜子统计" class="headerlink" title="添加不蒜子统计"></a>添加不蒜子统计</h2><p><strong>在yilia/layout/_partial/after-footer.ejs最后添加</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改yilia/layout/partial/footer.ejs为</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;footer id=&quot;footer&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;outer&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;footer-info&quot;&gt;</span><br><span class="line">      本站访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&amp;nbsp;</span><br><span class="line">      本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人&amp;nbsp;</span><br><span class="line">      本页阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次&amp;nbsp;</span><br><span class="line">      &lt;div class=&quot;footer-left&quot;&gt;</span><br><span class="line">        &amp;copy; &lt;%= date(new Date(), &#x27;YYYY&#x27;) %&gt; &lt;%= config.author || config.title %&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;footer-right&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot;&gt;Hexo&lt;/a&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/footer&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加文章字数统计以及阅读时长"><a href="#添加文章字数统计以及阅读时长" class="headerlink" title="添加文章字数统计以及阅读时长"></a>添加文章字数统计以及阅读时长</h2><p><strong>安装hexo-wordcount</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建yilia/layout/_partial/post/word.ejs文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;margin-top:10px;&quot;&gt;</span><br><span class="line">    &lt;span class=&quot;post-time&quot;&gt;</span><br><span class="line">      &lt;span class=&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">        &lt;i class=&quot;fa fa-keyboard-o&quot;&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span class=&quot;post-meta-item-text&quot;&gt;  字数统计: &lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;post-count&quot;&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span class=&quot;post-time&quot;&gt;</span><br><span class="line">      &amp;nbsp; | &amp;nbsp;</span><br><span class="line">      &lt;span class=&quot;post-meta-item-icon&quot;&gt;</span><br><span class="line">        &lt;i class=&quot;fa fa-hourglass-half&quot;&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span class=&quot;post-meta-item-text&quot;&gt;  阅读时长: &lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;post-count&quot;&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>打开yilia/layout/_partial/article.ejs文件，在下列代码后</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- partial(&#x27;post/title&#x27;, &#123;class_name: &#x27;article-title_code_ant&#x27;&#125;) %&gt;</span><br><span class="line">        &lt;% if (!post.noDate)&#123; %&gt;</span><br><span class="line">        &lt;%- partial(&#x27;post/date&#x27;, &#123;class_name: &#x27;archive-article-date&#x27;, date_format: null&#125;) %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if(theme.word_count &amp;&amp; !post.no_word_count)&#123; %&gt;</span><br><span class="line">    &lt;%- partial(&#x27;post/word&#x27;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>在yilia/_config.yml文件中添加</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 是否开启字数统计</span><br><span class="line"># 不需要使用，直接设置值为false，或注释掉</span><br><span class="line">word_count: True</span><br></pre></td></tr></table></figure>
+
+<h1 id="添加网站运行时间"><a href="#添加网站运行时间" class="headerlink" title="添加网站运行时间"></a>添加网站运行时间</h1><p><strong>打开yilia/layout/_partial/footer.ejs文件，在该代码上</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;footer-info&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var now = new Date(); </span><br><span class="line">    function createtime() &#123; </span><br><span class="line">        var grt= new Date(&quot;07/03/2019 08:00:00&quot;);//此处修改你的建站时间或者网站上线时间 </span><br><span class="line">        now.setTime(now.getTime()+250); </span><br><span class="line">        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); </span><br><span class="line">        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); </span><br><span class="line">        if(String(hnum).length ==1 )&#123;hnum = &quot;0&quot; + hnum;&#125; minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); </span><br><span class="line">        mnum = Math.floor(minutes); if(String(mnum).length ==1 )&#123;mnum = &quot;0&quot; + mnum;&#125; </span><br><span class="line">        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); </span><br><span class="line">        snum = Math.round(seconds); if(String(snum).length ==1 )&#123;snum = &quot;0&quot; + snum;&#125; </span><br><span class="line">        document.getElementById(&quot;timeDate&quot;).innerHTML = &quot;本站已安全运行 &quot;+dnum+&quot; 天 &quot;; </span><br><span class="line">        document.getElementById(&quot;times&quot;).innerHTML = hnum + &quot; 小时 &quot; + mnum + &quot; 分 &quot; + snum + &quot; 秒&quot;; </span><br><span class="line">    &#125; </span><br><span class="line">    setInterval(&quot;createtime()&quot;,250);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考博客：<a target="_blank" rel="noopener" href="https://yl1690561739.gitee.io/2019/07/15/yilia-settings/">Buzhibujue</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">个性化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/21/hexo%E4%B9%8Byilia%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/08/22/%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AEhexo%E7%9A%84yilia%E4%B8%BB%E9%A2%98%E4%BA%8B%E9%81%87%E5%88%B0%E6%97%A0%E6%95%B0%E6%81%B6%E5%BF%83%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%99%E4%BB%B6%E4%BA%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          配置hexo的yilia主题时遇到的问题
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/08/20/hexo%20+%20github%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo + github 搭建自己的博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%A4%B4%E5%83%8F"><span class="toc-number">1.</span> <span class="toc-text">设置头像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%96%87%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">所有文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E5%B7%A6%E4%BE%A7%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%97%B6%E9%92%9F%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">在左侧栏添加时钟：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8D%E8%92%9C%E5%AD%90%E7%BB%9F%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">添加不蒜子统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E4%BB%A5%E5%8F%8A%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="toc-number">5.</span> <span class="toc-text">添加文章字数统计以及阅读时长</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="toc-number"></span> <span class="toc-text">添加网站运行时间</span></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -273,8 +494,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
