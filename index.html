@@ -293,13 +293,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/20/a/">a</a>
+      <a class="article-title" href="/2022/08/20/a/">a</a>
     </h1>
   
 
         
-        <a href="/2022/09/20/a/" class="archive-article-date">
-  	<time datetime="2022-09-20T01:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-20</time>
+        <a href="/2022/08/20/a/" class="archive-article-date">
+  	<time datetime="2022-08-20T01:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-20</time>
 </a>
         
         
@@ -340,7 +340,153 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/20/a/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/08/20/a/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo + github 搭建自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/20/hexo%20+%20github%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">hexo + github 搭建自己的博客.md</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/20/hexo%20+%20github%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2021-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-20</time>
+</a>
+        
+        
+            <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">725字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+<h2 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h2><p>因为hexo需要Nodejs的支持，所以我们需要下载出来，完成前置步骤</p>
+<ul>
+<li>输网址：Nodejs.org，进入官网，下载左面的那个</li>
+<li>打开终端，输入 <code>sudo su</code>，回车后输入密码进入root用户</li>
+</ul>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>为了提升安装速度，我们可以先安装cnmp</p>
+<p>输入以下指令：</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210712111837383.png" alt="image-20210712111837383" style="zoom:40%;" />
+
+<p>显示这样就代表下载完成了，那个warn不用管的</p>
+<p>然后输入以下指令，安装hexo</p>
+<p><code>cnpm install -g hexo-cli</code></p>
+<p>这样几秒钟就下完了</p>
+<h2 id="建立文件夹"><a href="#建立文件夹" class="headerlink" title="建立文件夹"></a>建立文件夹</h2><p>先输入</p>
+<p><code>mkdir blog</code></p>
+<p>就是建立了一个名叫‘blog’的文件夹，这个名字可以随便改</p>
+<p>然后输入<code>cd blog/</code>，进入这个文件夹</p>
+<p>输入<code>pwd</code>，就可以查看blog的路径</p>
+<p>我的是这个样子</p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210712115438366.png" alt="image-20210712115438366" style="zoom:50%;" />
+
+<h2 id="用hexo初始化生成博客"><a href="#用hexo初始化生成博客" class="headerlink" title="用hexo初始化生成博客"></a>用hexo初始化生成博客</h2><p>输入<code>sudo hexo init</code></p>
+<p>当出现Start blogging with Hexo！就代表下载完成</p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210712121552877.png" alt="image-20210712121552877" style="zoom:0%;" />
+
+<h2 id="启动博客"><a href="#启动博客" class="headerlink" title="启动博客"></a>启动博客</h2><p>输入<code>hexo s</code></p>
+<p>![image-20210712123751983](/Users/chelsea/Library/Application Support/typora-user-images/image-20210712123751983.png)</p>
+<p>你会得到<a href="http://localhost:4000的一个网址，用浏览器打开，你就得到了你自己的第一个博文，Hello">http://localhost:4000的一个网址，用浏览器打开，你就得到了你自己的第一个博文，Hello</a> World，</p>
+<p>![image-20210712123920710](/Users/chelsea/Library/Application Support/typora-user-images/image-20210712123920710.png)</p>
+<p>关闭的时候按 control + c 即可</p>
+<h2 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h2><p>输入<code>hexo n &quot;爷的第一篇博客文章&quot;</code></p>
+<p>双引号内写博客的标题</p>
+<p>你就可以得到一个红色的字体的一行字</p>
+<img src="/Users/chelsea/Library/Application Support/typora-user-images/image-20210712131633756.png" alt="image-20210712131633756" style="zoom:40%;" />
+
+<p>现在是在blog的目录下，需要进入到创建的这个博客里面，需要输入cd+红字的后半部分的位置的位置：</p>
+<p><code>cd source/_posts/</code></p>
+<p>此时就可以对你的这篇博客进行编辑了：</p>
+<p><code>vim 我的第一篇博客.md</code></p>
+<p>就正常写博客就可以了</p>
+<p>写完了就可以 esc  :wq 退出了</p>
+<p>退回blog的位置</p>
+<p>看看当前是第几层，然后退就行了</p>
+<p><code>../..</code></p>
+<p>想退几层斜杠前面就有几个点，后面也一样</p>
+<p>再重新启动</p>
+<p><code>hexo s</code></p>
+<p>然后再访问就可以看见新写的文章</p>
+<h2 id="将博客部署到github"><a href="#将博客部署到github" class="headerlink" title="将博客部署到github"></a>将博客部署到github</h2><p>进入到自己的github，然后点右上角的加号，第一个new repository，</p>
+<p>名字必选是你的名字+’.github.io’，如我的就是：Chelseatr.github.io</p>
+<p>这是用户部署个人博客的GitHub仓库的命名要求</p>
+<p>再去终端输入<code>cnpm install --save hexo-deployer-git</code>下载git的插件</p>
+<p>再设置：</p>
+<p><code>vim _config.yml</code></p>
+<p>中的最底部，设置Deployment</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: 仓库的地址</span><br></pre></td></tr></table></figure>
+
+<p>再<code>hexo d</code>就可以了</p>
+<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new postName       <span class="comment">#新建文章 在source/_posts 下生成</span></span><br><span class="line">hexo new page pageName  <span class="comment">#新建页面 在source/pageName 下生成</span></span><br><span class="line">hexo deploy             <span class="comment">#将.deploy目录部署到GitHub 简写指令：hexo d </span></span><br><span class="line">hexo generate           <span class="comment">#生成静态页面至public目录 简写指令：hexo g </span></span><br><span class="line">hexo server             <span class="comment">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）简写指令hexo s </span></span><br><span class="line">hexo clean              <span class="comment">#清除所有静态页面和缓存数据</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/20/hexo%20+%20github%20%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
